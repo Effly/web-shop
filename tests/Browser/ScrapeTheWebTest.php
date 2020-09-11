@@ -90,7 +90,7 @@ class ScrapeTheWebTest extends DuskTestCase
                         'chars' => array_combine($charNames, $charValues),
                     ];
 
-                $browser->assertTitle($product['name']);
+                $waitContent->assertTitle($product['name']);
                     $products[] = $product;
                 }
 
@@ -145,6 +145,7 @@ class ScrapeTheWebTest extends DuskTestCase
                                 'desc' => $waitContent->text('.description'),
                                 'chars' => array_combine($charNames, $charValues),
                             ];
+                            $waitContent->assertTitle($product['name']);
                             $products[] = $product;
                         }
 

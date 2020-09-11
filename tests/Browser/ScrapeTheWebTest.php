@@ -90,9 +90,9 @@ class ScrapeTheWebTest extends DuskTestCase
                         'chars' => array_combine($charNames, $charValues),
                     ];
 
+                $browser->assertTitle($product['name']);
                     $products[] = $product;
                 }
-                $this->assert
 
                 if (end($paginateLinks)) {
                     for ($i = 2; $i <= (int)explode('?PAGEN_1=', end($paginateLinks))[1]; $i++) {
